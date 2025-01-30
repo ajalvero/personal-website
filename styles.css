@@ -1,41 +1,48 @@
-/* ------------------------------
-   GLOBAL RESETS & BASE STYLES
------------------------------- */
+/* RESET / BASE STYLES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 
+  1) BODY BACKGROUND:
+     - Black fallback color.
+     - Background image anchored on the left (centered vertically).
+     - No repeat; it scrolls with the page (background-attachment: scroll is default).
+     - 'contain' ensures the entire image is visible; 
+       if you want it to fill more space (cropping edges), use 'cover' instead.
+*/
 body {
   font-family: Arial, sans-serif;
-  color: #000;
-  /* 
-    Example: a diamond-like pattern using repeating-linear-gradient.
-    You can adjust the angles, colors, and spacing as you like. 
-  */
-  background: repeating-linear-gradient(
-    45deg,
-    #fff,
-    #fff 15px,
-    #000 15px,
-    #000 30px
-  );
-  background-attachment: fixed;  /* so it doesn’t move while scrolling */
+  background-color: #000;
+  background-image: url('images/square.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain; /* or 'cover' */
+  /* background-attachment: scroll; <-- This is default, you can omit it. */
+  color: #fff; /* Default text color */
+  min-height: 100vh; /* So body covers full viewport height */
 }
 
-/* Make sure text is easily legible atop the pattern by using a white BG box */
-main, header, footer {
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 0 auto;
+/* 
+  2) FOREGROUND (DARK GRAY):
+     - Wrap header, main, footer in .content to have a single "block" that
+       spans the entire page height on top of the background image.
+     - Middle dark gray; feel free to tweak #333 for lighter or darker. 
+*/
+.content {
+  background-color: #333;
+  min-height: 100vh;
   max-width: 1000px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-/* ------------------------------
-   HEADER & NAV
------------------------------- */
+/* 3) HEADER / TITLE / NAV */
 header h1 {
+  /*  #41FF00 for the name */
+  color: #41FF00;
   font-size: 2rem;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -47,11 +54,13 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 10px;
 }
 
+/* Teal nav links */
 nav ul li a {
+  color: teal;
   text-decoration: none;
-  color: #000;
   font-weight: bold;
 }
 
@@ -59,25 +68,13 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* ------------------------------
-   SECTIONS
------------------------------- */
+/* 4) SECTIONS */
 section {
   margin: 40px 0;
 }
 
-/* ------------------------------
-   FOOTER
------------------------------- */
+/* 5) FOOTER */
 footer p {
   text-align: center;
   font-size: 0.9rem;
 }
-
-/* 
-   OPTIONAL: If the repeated diagonal stripes are too bold, 
-   you can place a subtle overlay or switch to a simpler style. 
-   For example, you might just use a white background for <body> 
-   and incorporate the Herrera-like pattern as a header banner or 
-   behind a single section. 
-*/
