@@ -32,7 +32,7 @@ body {
      - Middle dark gray; feel free to tweak #333 for lighter or darker. 
 */
 .content {
-  background-color: #333;
+  background-color: #666;
   min-height: 100vh;
   max-width: 1000px;
   margin: 0 auto;
