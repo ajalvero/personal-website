@@ -17,9 +17,9 @@ body {
   background: repeating-linear-gradient(
     45deg,
     #fff,
-    #fff 5px,
-    #000 5px,
-    #000 10px
+    #fff 25px,
+    #000 25px,
+    #000 50px
   );
   background-attachment: fixed;  /* so it doesn’t move while scrolling */
 }
