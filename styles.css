@@ -1,40 +1,58 @@
-/* ------------------------------
-   GLOBAL RESETS & BASE STYLES
------------------------------- */
+/* Basic reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body uses a simple white background so text is easy to read. */
 body {
   font-family: Arial, sans-serif;
+  background-color: #fff; /* Solid white to avoid pattern behind text */
   color: #000;
-  /* 
-    Example: a diamond-like pattern using repeating-linear-gradient.
-    You can adjust the angles, colors, and spacing as you like. 
-  */
-  background: repeating-linear-gradient(
-    45deg,
-    #fff,
-    #fff 15px,
-    #000 15px,
-    #000 30px
-  );
-  background-attachment: fixed;  /* so it doesn’t move while scrolling */
 }
 
-/* Make sure text is easily legible atop the pattern by using a white BG box */
-main, header, footer {
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 0 auto;
+/* 
+  Create a 'hero' section with crossing diagonal stripes: 
+  repeating-linear-gradient(45deg, ...) plus repeating-linear-gradient(-45deg, ...).
+  The crossing lines form diamond shapes.
+*/
+.hero {
+  width: 100%;
+  height: 300px; /* Adjust height as you wish */
+  background:
+    /* First diagonal (45°) */
+    repeating-linear-gradient(
+      45deg,
+      #fff,
+      #fff 15px,
+      #000 15px,
+      #000 30px
+    ),
+    /* Second diagonal (-45°) */
+    repeating-linear-gradient(
+      -45deg,
+      #fff,
+      #fff 15px,
+      #000 15px,
+      #000 30px
+    );
+  background-attachment: fixed; /* So it stays put on scroll (optional) */
+  background-position: center;
+  background-size: cover;
+}
+
+/* Give your main sections a solid white background so the stripes don’t show underneath */
+header,
+main,
+footer {
   max-width: 1000px;
+  margin: 0 auto;
   padding: 20px;
+  background-color: #fff;
 }
 
-/* ------------------------------
-   HEADER & NAV
------------------------------- */
+/* Simple styles for headings and sections */
 header h1 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -42,42 +60,11 @@ header h1 {
   letter-spacing: 2px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
-/* ------------------------------
-   SECTIONS
------------------------------- */
 section {
   margin: 40px 0;
 }
 
-/* ------------------------------
-   FOOTER
------------------------------- */
 footer p {
   text-align: center;
   font-size: 0.9rem;
 }
-
-/* 
-   OPTIONAL: If the repeated diagonal stripes are too bold, 
-   you can place a subtle overlay or switch to a simpler style. 
-   For example, you might just use a white background for <body> 
-   and incorporate the Herrera-like pattern as a header banner or 
-   behind a single section. 
-*/
