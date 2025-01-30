@@ -1,0 +1,83 @@
+/* ------------------------------
+   GLOBAL RESETS & BASE STYLES
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #000;
+  /* 
+    Example: a diamond-like pattern using repeating-linear-gradient.
+    You can adjust the angles, colors, and spacing as you like. 
+  */
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 15px,
+    #000 15px,
+    #000 30px
+  );
+  background-attachment: fixed;  /* so it doesn’t move while scrolling */
+}
+
+/* Make sure text is easily legible atop the pattern by using a white BG box */
+main, header, footer {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+/* ------------------------------
+   HEADER & NAV
+------------------------------ */
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------
+   SECTIONS
+------------------------------ */
+section {
+  margin: 40px 0;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* 
+   OPTIONAL: If the repeated diagonal stripes are too bold, 
+   you can place a subtle overlay or switch to a simpler style. 
+   For example, you might just use a white background for <body> 
+   and incorporate the Herrera-like pattern as a header banner or 
+   behind a single section. 
+*/
