@@ -2,81 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Academic Website</title>
+  <title>Main - AJ Alvero</title>
   <link rel="stylesheet" href="styles.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 </head>
 <body>
-  <!-- Main wrapper to create the dark-gray foreground across full page height -->
-  <div class="content">
-    
-    <header>
-      <h1>AJ ALVERO</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
 
+  <!-- 1) TOP NAVIGATION -->
+  <header>
+    <nav>
+      <ul>
+        <!-- Each link goes to a separate page -->
+        <li><a href="index.html">Main</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="other.html">Other</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 2) LAYOUT WRAPPER -->
+  <div class="layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar-left">
+      <!-- Profile pic -->
+      <img src="images/profile-pic.jpg" alt="AJ Alvero" class="profile-pic" />
+
+      <!-- Your name -->
+      <h2>AJ Alvero</h2>
+
+      <!-- Social / Academic Links -->
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Google Scholar</a></li>
+        <li><a href="https://twitter.com/YOUR_TWITTER" target="_blank">Twitter</a></li>
+        <li><a href="https://bsky.app/profile/YOUR_HANDLE" target="_blank">Bluesky</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
     <main>
-      <section id="about">
+      <section>
         <h2>About Me</h2>
-        <p>Your bio here...</p>
+        <p>
+          Here’s some text about who you are, your background, interests, etc.
+          You can add as much or as little detail as you want.
+        </p>
       </section>
-
-      <section id="research">
-        <h2>Research</h2>
-        <p>Your research details...</p>
-      </section>
-
-      <section id="publications">
-        <h2>Publications</h2>
+      <section>
+        <h2>What’s Hippening and Happening</h2>
         <ul>
-          <li>Publication 1</li>
-          <li>Publication 2</li>
-          <li>Publication 3</li>
+          <li>First bullet about something you’re doing</li>
+          <li>Second bullet</li>
+          <li>Third bullet</li>
         </ul>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:[email protected]">[email protected]</a></p>
       </section>
     </main>
 
-  <p>© 2025 Your Name</p>
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/aj-alvero-b7652879/"
-       target="_blank" 
-       rel="noopener noreferrer">
-       LinkedIn
-    </a>
-    |
-    <a href="https://twitter.com/aj_alvero"
-       target="_blank" 
-       rel="noopener noreferrer">
-       Twitter
-    </a>
-    |
-    <a href="https://bsky.app/profile/ajalvero.bsky.social"
-       target="_blank"
-       rel="noopener noreferrer">
-       Bluesky
-    </a>
-    |
-    <a href="https://scholar.google.com/citations?user=Kufgl3QAAAAJ&hl=en"
-       target="_blank"
-       rel="noopener noreferrer">
-       Google Scholar
-    </a>
-  </div>
-    </footer>
+    <!-- RIGHT SIDEBAR: Carmen Herrera Artwork -->
+    <aside class="sidebar-right">
+      <h3>Artwork by Carmen Herrera</h3>
+      <!-- We’ll replace this image via JavaScript with a random one each time -->
+      <img id="herrera-art" src="" alt="Carmen Herrera artwork" />
+    </aside>
 
-  </div><!-- .content -->
+  </div><!-- .layout -->
+
+  <!-- (Optional) FOOTER -->
+  <footer>
+    <p>© 2025 AJ Alvero</p>
+  </footer>
+
+  <!-- JavaScript for random artwork -->
+  <script>
+    // Put the names (paths) of your Herrera images in an array:
+    const herreraImages = [
+      'images/herrera1.jpg',
+      'images/herrera2.jpg',
+      'images/herrera3.jpg'
+    ];
+
+    // Pick a random index:
+    const randomIndex = Math.floor(Math.random() * herreraImages.length);
+    const randomImage = herreraImages[randomIndex];
+
+    // Set the 'src' of the #herrera-art <img>:
+    document.getElementById('herrera-art').src = randomImage;
+  </script>
+
 </body>
 </html>
