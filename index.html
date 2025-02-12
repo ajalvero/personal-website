@@ -24,8 +24,13 @@
 
     <!-- LEFT SIDEBAR -->
     <aside class="sidebar-left">
+      <!-- Profile pic -->
       <img src="images/6105007_Alvero_KBAKT_photo.jpg" alt="AJ Alvero" class="profile-pic" />
+
+      <!-- Your name -->
       <h2>AJ Alvero</h2>
+
+      <!-- Social / Academic Links -->
       <ul class="social-links">
         <li><a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a></li>
         <li><a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Google Scholar</a></li>
@@ -53,22 +58,20 @@
       </section>
     </main>
 
+    <!-- RIGHT SIDEBAR: Carmen Herrera Artwork -->
+    <aside class="sidebar-right">
+      <!-- Artwork by Carmen Herrera -->
+      <!-- We’ll replace this image via JavaScript with a random one each time -->
+      <img id="herrera-art" src="" alt="Carmen Herrera artwork" />
+    </aside>
+
   </div><!-- .layout -->
   
-  <!-- MOVE THE ARTWORK <aside> BELOW THE .layout -->
-  <aside 
-    class="sidebar-right" 
-    style="position: fixed; bottom: 0; right: 0; margin: 10px;"
-  >
-    <!-- We’ll replace this image via JavaScript with a random one each time -->
-    <img id="herrera-art" src="" alt="Carmen Herrera artwork" />
-  </aside>
-
   <footer>
     <p>©<span id="current-year"></span> AJ Alvero. Artwork by <a href="https://en.wikipedia.org/wiki/Carmen_Herrera">Carmen Herrera</a>.</p>
   </footer>
 
-  <!-- Random artwork script -->
+  <!-- Random artwork script, etc. -->
   <script>
     const herreraImages = [
       'images/blancoyverde.jpg',
@@ -81,11 +84,14 @@
     document.getElementById('herrera-art').src = herreraImages[randomIndex];
   </script>
 
-  <!-- Current year script -->
   <script>
-    const thisYear = new Date().getFullYear();
-    document.getElementById('current-year').textContent = thisYear;
-  </script>
+  // Get the current year
+  const thisYear = new Date().getFullYear();
 
+  // Insert it into the span
+  document.getElementById('current-year').textContent = thisYear;
+</script>
+
+  
 </body>
 </html>
