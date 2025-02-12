@@ -24,7 +24,7 @@
   </div><!-- .layout -->
 
   <footer>
-    <p>© 2025 AJ Alvero. Artwork by <a href="https://en.wikipedia.org/wiki/Carmen_Herrera">Carmen Herrera</a>.</p>
+    <p>©<span id="current-year"></span> AJ Alvero. Artwork by <a href="https://en.wikipedia.org/wiki/Carmen_Herrera">Carmen Herrera</a>.</p>
   </footer>
 
   <!-- Random artwork script, etc. -->
@@ -40,5 +40,14 @@
     document.getElementById('herrera-art').src = herreraImages[randomIndex];
   </script>
 
+  <script>
+  // Get the current year
+  const thisYear = new Date().getFullYear();
+
+  // Insert it into the span
+  document.getElementById('current-year').textContent = thisYear;
+</script>
+
+  
 </body>
 </html>
