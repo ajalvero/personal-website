@@ -1,97 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Main - AJ Alvero</title>
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Alvero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&family=Spectral:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff;
+            color: #1a1a1a;
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Large artwork as subtle background watermark */
+        .artwork-decoration {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 0.3s forwards;
+            z-index: 0;
+        }
+
+        .artwork-decoration img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) opacity(0.15);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 120px 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        header {
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Spectral', serif;
+            font-size: 4.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #000;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        nav a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 400;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #1a1a1a;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-family: 'Spectral', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #000;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: #ddd;
+            margin: 60px auto;
+        }
+
+        @media (max-width: 768px) {
+            .artwork-decoration {
+                width: 350px;
+                height: 350px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 80px 30px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Large artwork as centered background watermark -->
+    <div class="artwork-decoration">
+        <img id="randomArt" src="" alt="Artwork">
+    </div>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Main</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="other.html">Other</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p class="subtitle">Researcher & Academic</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
 
-  <div class="layout">
-    <!-- sidebars + main content -->
+        <section id="about">
+            <h2>About</h2>
+            <p>I am a researcher working at the intersection of computational systems and human experience, with a focus on how we can design more thoughtful and responsive technologies.</p>
+            <p>My work combines rigorous analysis with creative approaches to problem-solving, always seeking to understand the broader implications of technological development.</p>
+        </section>
 
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar-left">
-      <!-- Profile pic -->
-      <img src="images/6105007_Alvero_KBAKT_photo.jpg" alt="AJ Alvero" class="profile-pic" />
+        <div class="divider"></div>
 
-      <!-- Your name -->
-      <h2>AJ Alvero</h2>
+        <section id="research">
+            <h2>Research</h2>
+            <p>My current research explores machine learning interpretability and the ways computational models can be designed to better align with human values and understanding.</p>
+            <p>I'm particularly interested in how we can make complex systems more transparent and accountable.</p>
+        </section>
 
-      <!-- Social / Academic Links -->
-      <ul class="social-links">
-        <li><a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a></li>
-        <li><a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Google Scholar</a></li>
-        <li><a href="https://twitter.com/YOUR_TWITTER" target="_blank">Twitter</a></li>
-        <li><a href="https://bsky.app/profile/YOUR_HANDLE" target="_blank">Bluesky</a></li>
-      </ul>
-    </aside>
+        <div class="divider"></div>
 
-    <!-- MAIN CONTENT -->
-    <main>
-      <section>
-        <h2>About Me</h2>
-        <p>
-          Here’s some text about who you are, your background, interests, etc.
-          You can add as much or as little detail as you want.
-        </p>
-      </section>
-      <section>
-        <h2>What’s Happening</h2>
-        <ul>
-          <li>First bullet about something you’re doing</li>
-          <li>Second bullet</li>
-          <li>Third bullet</li>
-        </ul>
-      </section>
-    </main>
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <p><strong>Understanding Complexity</strong> — Journal of Computational Research, 2024</p>
+            <p><strong>Interpretable Systems</strong> — Conference on Machine Learning, 2023</p>
+            <p><strong>Human-Centered AI</strong> — ACM Transactions, 2022</p>
+        </section>
 
-    <!-- RIGHT SIDEBAR: Carmen Herrera Artwork -->
-    <aside class="sidebar-right">
-      <!-- Artwork by Carmen Herrera -->
-      <!-- We’ll replace this image via JavaScript with a random one each time -->
-      <img id="herrera-art" src="" alt="Carmen Herrera artwork" />
-    </aside>
+        <div class="divider"></div>
 
-  </div><!-- .layout -->
-  
-  <footer>
-    <p>©<span id="current-year"></span> AJ Alvero. Artwork by <a href="https://en.wikipedia.org/wiki/Carmen_Herrera">Carmen Herrera</a>.</p>
-  </footer>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>ajalvero@cornell.edu</p>
+            <p>Center for Data Science for Enterprise and Society</p>
+            <p>Departments of Information Science, Computer Science, and Sociology</p>
+        </section>
+    </div>
 
-  <!-- Random artwork script, etc. -->
-  <script>
-    const herreraImages = [
-      'images/blancoyverde.jpg',
-      'images/carmen_herrera_box.jpg',
-      'images/cherrera_pinwheel.png',
-      'images/square.png',
-      'images/large_herrera_rondo1958.jpg'
-    ];
-    const randomIndex = Math.floor(Math.random() * herreraImages.length);
-    document.getElementById('herrera-art').src = herreraImages[randomIndex];
-  </script>
+    <script>
+        // List all your Carmen Herrera images here
+        const images = [
+            'images/square.png',
+            'images/large_herrera_rondo1958.jpg',
+            'images/cherrera_pinwheel.png',
+            'images/carmen_herrera_box.jpg',
+            'images/blancoyverde.jpg',
+            // Add all your image filenames here
+        ];
 
-  <script>
-  // Get the current year
-  const thisYear = new Date().getFullYear();
-
-  // Insert it into the span
-  document.getElementById('current-year').textContent = thisYear;
-</script>
-
-  
+        // Randomly select one image
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        
+        // Set the image source
+        document.getElementById('randomArt').src = randomImage;
+    </script>
 </body>
 </html>
