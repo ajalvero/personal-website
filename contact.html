@@ -145,6 +145,20 @@
             opacity: 0.6;
         }
 
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #e8e8e8;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
         @media (max-width: 768px) {
             .artwork-decoration {
                 width: 350px;
@@ -186,9 +200,16 @@
             <p>Departments of Information Science, Computer Science, and Sociology</p>
             <p>Cornell University</p>
         </section>
+
+        <footer>
+            <p>© <span id="year"></span> AJ Alvero. Artwork by Carmen Herrera.</p>
+        </footer>
     </div>
 
     <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         const images = [
             'images/square.png',
             'images/large_herrera_rondo1958.jpg',
