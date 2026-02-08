@@ -114,6 +114,10 @@
             width: 100%;
         }
 
+        nav a.active::after {
+            width: 100%;
+        }
+
         section {
             margin-bottom: 80px;
         }
@@ -130,13 +134,6 @@
             font-size: 1.05rem;
             margin-bottom: 20px;
             color: #333;
-        }
-
-        .divider {
-            width: 40px;
-            height: 1px;
-            background: #ddd;
-            margin: 60px auto;
         }
 
         @media (max-width: 768px) {
@@ -166,10 +163,10 @@
             <h1>AJ Alvero</h1>
             <p class="subtitle">Cornell University</p>
             <nav>
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#cv">CV</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html" class="active">About</a>
+                <a href="research.html">Research</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </header>
 
@@ -177,33 +174,8 @@
             <h2>About</h2>
             <p>I am a researcher working at the intersection of computational systems and human experience, with a focus on how we can design more thoughtful and responsive technologies.</p>
             <p>My work combines rigorous analysis with creative approaches to problem-solving, always seeking to understand the broader implications of technological development.</p>
-             <i><p>Bio written in third person:</p></i>
+            <i><p>Bio written in third person:</p></i>
             <p>AJ Alvero is a computational social scientist at the Cornell University Center for Data Science for Enterprise and Society with departmental affiliations in Sociology, Information Science, and Computer Science. Most of his research examines moments of high stakes evaluation, specifically college admissions and parole hearings. He addresses questions and topics related to the sociological inquiry of artificial intelligence, culture, language, education, race and ethnicity, and organizational decision making. This work has appeared or is forthcoming in journals such as <i>Science Advances</i>, <i>Poetics</i>, <i>The Oxford Handbook of the Sociology of Machine Learning</i>, the <i>American Journal of Sociology</i>, <i>Sociological Methods & Research</i>, <i>Journal of Big Data</i>, and other venues. AJ earned his PhD at Stanford University along with an MS in statistics. Prior to entering academia, AJ was a high school English teacher in Miami, FL.</p>
-        </section>
-
-        <div class="divider"></div>
-
-        <section id="research">
-            <h2>Research</h2>
-            <p>My current research explores machine learning interpretability and the ways computational models can be designed to better align with human values and understanding.</p>
-           </section>
-
-        <div class="divider"></div>
-
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            <p><strong>Understanding Complexity</strong> — Journal of Computational Research, 2024</p>
-            <p><strong>Interpretable Systems</strong> — Conference on Machine Learning, 2023</p>
-            <p><strong>Human-Centered AI</strong> — ACM Transactions, 2022</p>
-        </section>
-
-        <div class="divider"></div>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>ajalvero@cornell.edu</p>
-            <p>Center for Data Science for Enterprise and Society</p>
-            <p>Departments of Information Science, Computer Science, and Sociology</p>
         </section>
     </div>
 
@@ -215,7 +187,6 @@
             'images/cherrera_pinwheel.png',
             'images/carmen_herrera_box.jpg',
             'images/blancoyverde.jpg',
-            // Add all your image filenames here
         ];
 
         // Randomly select one image
