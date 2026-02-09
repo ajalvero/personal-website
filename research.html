@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - AJ Alvero</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&family=Spectral:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,42 +12,19 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --teal: #06B6D4;
+            --pink: #EC4899;
+            --green: #10B981;
+            --coral: #F97316;
+        }
+
         body {
             background: #ffffff;
             color: #1a1a1a;
-            font-family: 'Libre Franklin', sans-serif;
+            font-family: 'Work Sans', sans-serif;
             font-weight: 300;
             line-height: 1.8;
-        }
-
-        .artwork-decoration {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            height: 500px;
-            opacity: 0;
-            animation: fadeIn 2s ease-out 0.3s forwards;
-            z-index: 0;
-        }
-
-        .artwork-decoration img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(30%) opacity(0.15);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
         }
 
         .container {
@@ -64,9 +41,9 @@
         }
 
         h1 {
-            font-family: 'Spectral', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 4.5rem;
-            font-weight: 300;
+            font-weight: 600;
             margin-bottom: 10px;
             color: #000;
             letter-spacing: -0.02em;
@@ -96,6 +73,7 @@
             font-weight: 400;
             position: relative;
             padding-bottom: 2px;
+            transition: color 0.3s;
         }
 
         nav a::after {
@@ -104,15 +82,17 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
-            background: #1a1a1a;
+            height: 2px;
             transition: width 0.3s;
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:nth-child(1)::after { background: var(--teal); }
+        nav a:nth-child(2)::after { background: var(--pink); }
+        nav a:nth-child(3)::after { background: var(--green); }
+        nav a:nth-child(4)::after { background: var(--coral); }
+        nav a:nth-child(5)::after { background: var(--teal); }
 
+        nav a:hover::after,
         nav a.active::after {
             width: 100%;
         }
@@ -122,11 +102,24 @@
         }
 
         h2 {
-            font-family: 'Spectral', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
-            font-weight: 400;
+            font-weight: 600;
             margin-bottom: 25px;
             color: #000;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--pink);
         }
 
         p {
@@ -135,19 +128,230 @@
             color: #333;
         }
 
-        .divider {
-            width: 40px;
-            height: 1px;
-            background: #ddd;
-            margin: 60px auto;
+        .intro {
+            margin-bottom: 60px;
+        }
+
+        /* Clover/Shamrock Design - Flipped */
+        .clover-wrapper {
+            max-width: 500px;
+            margin: 0 auto 60px;
+            text-align: center;
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .clover-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .clover-top {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .clover-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .clover-leaf {
+            width: 200px;
+            height: 200px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            background: white;
+            border: 4px solid;
+        }
+
+        .clover-leaf:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-width: 5px;
+        }
+
+        .clover-leaf::before {
+            content: 'Click to explore';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Top leaf - text appears above */
+        .clover-top .clover-leaf::before {
+            top: -30px;
+        }
+
+        /* Bottom leaves - text appears below */
+        .clover-bottom .clover-leaf::before {
+            bottom: -30px;
+        }
+
+        .clover-leaf:hover::before {
+            opacity: 1;
+        }
+
+        .clover-leaf.active {
+            transform: scale(1.12);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            border-width: 5px;
+        }
+
+        .leaf-inner {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .leaf-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Stem - solid color, randomized by JS */
+        .stem {
+            width: 4px;
+            height: 60px;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .explore-hint {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Expanded content area */
+        .expanded-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            margin-top: 40px;
+        }
+
+        .expanded-content.active {
+            max-height: 2000px;
+            opacity: 1;
+        }
+
+        .expanded-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .expanded-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+        }
+
+        .expanded-content.strand-teal h3 { color: var(--teal); }
+        .expanded-content.strand-teal h3::after { background: var(--teal); }
+
+        .expanded-content.strand-pink h3 { color: var(--pink); }
+        .expanded-content.strand-pink h3::after { background: var(--pink); }
+
+        .expanded-content.strand-green h3 { color: var(--green); }
+        .expanded-content.strand-green h3::after { background: var(--green); }
+
+        .strand-description {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .expanded-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .publications-list {
+            margin-top: 30px;
+        }
+
+        .publication-item {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid;
+        }
+
+        .strand-teal .publication-item { border-left-color: var(--teal); }
+        .strand-pink .publication-item { border-left-color: var(--pink); }
+        .strand-green .publication-item { border-left-color: var(--green); }
+
+        .publication-item p {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .close-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .close-button button {
+            background: #666;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .close-button button:hover {
+            background: #333;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #e8e8e8;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: #999;
         }
 
         @media (max-width: 768px) {
-            .artwork-decoration {
-                width: 350px;
-                height: 350px;
-            }
-
             h1 {
                 font-size: 3rem;
             }
@@ -155,14 +359,32 @@
             .container {
                 padding: 80px 30px;
             }
+
+            .clover-top {
+                margin-bottom: 15px;
+            }
+
+            .clover-bottom {
+                gap: 15px;
+            }
+
+            .clover-leaf {
+                width: 150px;
+                height: 150px;
+                border-radius: 30px;
+            }
+
+            .leaf-inner {
+                padding: 15px;
+            }
+
+            .leaf-title {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="artwork-decoration">
-        <img id="randomArt" src="" alt="Artwork">
-    </div>
-
     <div class="container">
         <header>
             <h1>AJ Alvero</h1>
@@ -178,30 +400,213 @@
 
         <section id="research">
             <h2>Research</h2>
-            <p></p>
+            <div class="intro">
+                <p><em>Research details and publications coming soon.</em></p>
+            </div>
+
+            <div class="clover-wrapper">
+                <div class="clover-container">
+                    <div class="clover-top">
+                        <div class="clover-leaf" id="leaf-0" onclick="toggleStrand(0)">
+                            <div class="leaf-inner">
+                                <h3 class="leaf-title" id="title-0"></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clover-bottom">
+                        <div class="clover-leaf" id="leaf-1" onclick="toggleStrand(1)">
+                            <div class="leaf-inner">
+                                <h3 class="leaf-title" id="title-1"></h3>
+                            </div>
+                        </div>
+                        <div class="clover-leaf" id="leaf-2" onclick="toggleStrand(2)">
+                            <div class="leaf-inner">
+                                <h3 class="leaf-title" id="title-2"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stem" id="stem"></div>
+                <p class="explore-hint">Click any leaf to explore that research strand</p>
+            </div>
+
+            <!-- Expanded Content Areas -->
+            <div class="expanded-content" id="content-judgment">
+                <h3>Judgment & Opportunity</h3>
+                <p class="strand-description">How culture, language, and identity shape evaluative processes in college admissions and parole hearings.</p>
+                
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                </div>
+
+                <div class="close-button">
+                    <button onclick="closeAll()">Close</button>
+                </div>
+            </div>
+
+            <div class="expanded-content" id="content-identity">
+                <h3>Identity in Data</h3>
+                <p class="strand-description">How digital traces of human expression encode and reshape identity and social difference.</p>
+                
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                </div>
+
+                <div class="close-button">
+                    <button onclick="closeAll()">Close</button>
+                </div>
+            </div>
+
+            <div class="expanded-content" id="content-research">
+                <h3>Transforming Research</h3>
+                <p class="strand-description">How generative AI is reshaping knowledge production in academia and society.</p>
+                
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>Paper Title Here</strong> — <i>Journal Name</i>, Year</p>
+                    </div>
+                </div>
+
+                <div class="close-button">
+                    <button onclick="closeAll()">Close</button>
+                </div>
+            </div>
         </section>
 
-        <div class="divider"></div>
-
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            <!-- <p><strong>Understanding Complexity</strong> — Journal of Computational Research, 2024</p>
-            <p><strong>Interpretable Systems</strong> — Conference on Machine Learning, 2023</p>
-            <p><strong>Human-Centered AI</strong> — ACM Transactions, 2022</p> -->
-        </section>
+        <footer>
+            <p>© <span id="year"></span> AJ Alvero</p>
+        </footer>
     </div>
 
     <script>
-        const images = [
-            'images/square.png',
-            'images/large_herrera_rondo1958.jpg',
-            'images/cherrera_pinwheel.png',
-            'images/carmen_herrera_box.jpg',
-            'images/blancoyverde.jpg',
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Research strands data (without fixed colors)
+        const strands = [
+            {
+                title: "Judgment &\nOpportunity",
+                contentId: "content-judgment",
+                colorClass: "strand-teal"
+            },
+            {
+                title: "Identity\nin Data",
+                contentId: "content-identity",
+                colorClass: "strand-pink"
+            },
+            {
+                title: "Transforming\nResearch",
+                contentId: "content-research",
+                colorClass: "strand-green"
+            }
         ];
 
-        const randomImage = images[Math.floor(Math.random() * images.length)];
-        document.getElementById('randomArt').src = randomImage;
+        // Tropical color palette
+        const colors = [
+            { css: "var(--teal)", hex: "#06B6D4" },
+            { css: "var(--pink)", hex: "#EC4899" },
+            { css: "var(--green)", hex: "#10B981" },
+            { css: "var(--coral)", hex: "#F97316" }
+        ];
+
+        // Shuffle array
+        function shuffle(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        // Randomize strand positions
+        const shuffledStrands = shuffle(strands);
+
+        // Randomize colors for leaves
+        const shuffledColors = shuffle(colors);
+
+        // Pick random color for stem (solid)
+        const stemColor = colors[Math.floor(Math.random() * colors.length)];
+        document.getElementById('stem').style.background = stemColor.hex;
+
+        // Assign shuffled strands and randomized colors to leaves
+        shuffledStrands.forEach((strand, index) => {
+            const leaf = document.getElementById(`leaf-${index}`);
+            const title = document.getElementById(`title-${index}`);
+            const assignedColor = shuffledColors[index];
+            
+            leaf.style.borderColor = assignedColor.css;
+            title.style.color = assignedColor.css;
+            title.textContent = strand.title.replace('\n', ' ');
+            leaf.dataset.contentId = strand.contentId;
+            leaf.dataset.colorClass = strand.colorClass;
+        });
+
+        function toggleStrand(leafIndex) {
+            const leaf = document.getElementById(`leaf-${leafIndex}`);
+            const contentId = leaf.dataset.contentId;
+            const colorClass = leaf.dataset.colorClass;
+            const content = document.getElementById(contentId);
+            
+            // Close all content areas
+            document.querySelectorAll('.expanded-content').forEach(el => {
+                el.classList.remove('active');
+                el.classList.remove('strand-teal', 'strand-pink', 'strand-green');
+            });
+            
+            // Remove active from all leaves
+            document.querySelectorAll('.clover-leaf').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Open selected content
+            content.classList.add('active', colorClass);
+            leaf.classList.add('active');
+            
+            // Scroll to content
+            setTimeout(() => {
+                content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        function closeAll() {
+            document.querySelectorAll('.expanded-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.clover-leaf').forEach(el => {
+                el.classList.remove('active');
+            });
+        }
     </script>
 </body>
 </html>
