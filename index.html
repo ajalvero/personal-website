@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJ Alvero</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&family=Spectral:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,43 +12,19 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --teal: #06B6D4;
+            --pink: #EC4899;
+            --green: #10B981;
+            --coral: #F97316;
+        }
+
         body {
             background: #ffffff;
             color: #1a1a1a;
-            font-family: 'Libre Franklin', sans-serif;
+            font-family: 'Work Sans', sans-serif;
             font-weight: 300;
             line-height: 1.8;
-        }
-
-        /* Large artwork as subtle background watermark */
-        .artwork-decoration {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            height: 500px;
-            opacity: 0;
-            animation: fadeIn 2s ease-out 0.3s forwards;
-            z-index: 0;
-        }
-
-        .artwork-decoration img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(30%) opacity(0.15);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
         }
 
         .container {
@@ -65,9 +41,9 @@
         }
 
         h1 {
-            font-family: 'Spectral', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 4.5rem;
-            font-weight: 300;
+            font-weight: 600;
             margin-bottom: 10px;
             color: #000;
             letter-spacing: -0.02em;
@@ -81,6 +57,7 @@
             font-weight: 400;
         }
 
+        /* Option 1: Colored interactive elements */
         nav {
             display: flex;
             justify-content: center;
@@ -97,6 +74,7 @@
             font-weight: 400;
             position: relative;
             padding-bottom: 2px;
+            transition: color 0.3s;
         }
 
         nav a::after {
@@ -105,29 +83,53 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
-            background: #1a1a1a;
+            height: 2px;
             transition: width 0.3s;
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:nth-child(1)::after { background: var(--teal); }
+        nav a:nth-child(2)::after { background: var(--pink); }
+        nav a:nth-child(3)::after { background: var(--green); }
+        nav a:nth-child(4)::after { background: var(--coral); }
+        nav a:nth-child(5)::after { background: var(--teal); }
 
+        nav a:hover::after,
         nav a.active::after {
             width: 100%;
         }
 
         section {
             margin-bottom: 80px;
+            position: relative;
         }
 
+        /* Colored underlines for section headings */
         h2 {
-            font-family: 'Spectral', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
-            font-weight: 400;
+            font-weight: 600;
             margin-bottom: 25px;
             color: #000;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+        }
+
+        #about h2::after {
+            background: var(--teal);
+        }
+
+        #recent h2::after {
+            background: var(--pink);
         }
 
         p {
@@ -136,18 +138,33 @@
             color: #333;
         }
 
+        /* Tropical gradient divider */
         .divider {
             width: 40px;
-            height: 1px;
-            background: #ddd;
+            height: 2px;
+            background: linear-gradient(to right, var(--green), var(--pink));
             margin: 60px auto;
         }
 
-        /* Recent section styling */
+        /* Recent items with vertical bars */
         .recent-item {
             margin-bottom: 15px;
             font-size: 1.05rem;
             color: #333;
+            padding-left: 15px;
+            border-left: 3px solid transparent;
+        }
+
+        .recent-item:nth-of-type(1) {
+            border-left-color: var(--teal);
+        }
+
+        .recent-item:nth-of-type(2) {
+            border-left-color: var(--pink);
+        }
+
+        .recent-item:nth-of-type(3) {
+            border-left-color: var(--green);
         }
 
         .recent-item .date {
@@ -170,11 +187,11 @@
         }
 
         .archive-link a:hover {
-            color: #000;
-            border-bottom-color: #000;
+            color: var(--pink);
+            border-bottom-color: var(--pink);
         }
 
-        /* Professional links */
+        /* Professional links with colored hovers */
         .professional-links {
             display: flex;
             justify-content: center;
@@ -193,9 +210,10 @@
             text-decoration: none;
         }
 
-        .professional-links a:hover {
-            color: #000;
-        }
+        .professional-links a:nth-child(1):hover { color: var(--teal); }
+        .professional-links a:nth-child(2):hover { color: var(--pink); }
+        .professional-links a:nth-child(3):hover { color: var(--green); }
+        .professional-links a:nth-child(4):hover { color: var(--coral); }
 
         .professional-links svg {
             width: 24px;
@@ -224,11 +242,6 @@
         }
 
         @media (max-width: 768px) {
-            .artwork-decoration {
-                width: 350px;
-                height: 350px;
-            }
-
             h1 {
                 font-size: 3rem;
             }
@@ -240,11 +253,6 @@
     </style>
 </head>
 <body>
-    <!-- Large artwork as centered background watermark -->
-    <div class="artwork-decoration">
-        <img id="randomArt" src="" alt="Artwork">
-    </div>
-
     <div class="container">
         <header>
             <h1>AJ Alvero</h1>
@@ -260,8 +268,6 @@
 
         <section id="about">
             <h2>About</h2>
-            <p></p>
-            <p></p>
             <i><p>Bio written in third person:</p></i>
             <p>AJ Alvero is a computational social scientist at the Cornell University Center for Data Science for Enterprise and Society with departmental affiliations in Sociology, Information Science, and Computer Science. Most of his research examines moments of high stakes evaluation, specifically college admissions and parole hearings. He addresses questions and topics related to the sociological inquiry of artificial intelligence, culture, language, education, race and ethnicity, and organizational decision making. This work has appeared or is forthcoming in journals such as <i>Science Advances</i>, <i>Poetics</i>, <i>The Oxford Handbook of the Sociology of Machine Learning</i>, the <i>American Journal of Sociology</i>, <i>Sociological Methods & Research</i>, <i>Journal of Big Data</i>, and other venues. AJ earned his PhD at Stanford University along with an MS in statistics. Prior to entering academia, AJ was a high school English teacher in Miami, FL.</p>
         </section>
@@ -271,13 +277,13 @@
         <section id="recent">
             <h2>Recent</h2>
             <div class="recent-item">
-                <!-- <p><strong>Paper accepted:</strong> "Understanding Algorithmic Decision-Making in College Admissions" — <i>Science Advances</i> <span class="date">(January 2025)</span></p>
+                <p><strong>Under construction</strong> <span class="date">(Month Year)</span></p>
             </div>
             <div class="recent-item">
-                <p><strong>Invited talk:</strong> MIT Media Lab — "The Sociology of Machine Learning" <span class="date">(December 2024)</span></p>
+                <p><strong>Under construction</strong> <span class="date">(Month Year)</span></p>
             </div>
             <div class="recent-item">
-                <p><strong>Award:</strong> NSF CAREER Award for research on AI and organizational decision-making <span class="date">(November 2024)</span></p> -->
+                <p><strong>Under construction</strong> <span class="date">(Month Year)</span></p>
             </div>
             
             <div class="archive-link">
@@ -316,28 +322,13 @@
         </div>
 
         <footer>
-            <p>© <span id="year"></span> AJ Alvero. Artwork by Carmen Herrera.</p>
+            <p>© <span id="year"></span> AJ Alvero</p>
         </footer>
     </div>
 
     <script>
         // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // List all your Carmen Herrera images here
-        const images = [
-            'images/square.png',
-            'images/large_herrera_rondo1958.jpg',
-            'images/cherrera_pinwheel.png',
-            'images/carmen_herrera_box.jpg',
-            'images/blancoyverde.jpg',
-        ];
-
-        // Randomly select one image
-        const randomImage = images[Math.floor(Math.random() * images.length)];
-        
-        // Set the image source
-        document.getElementById('randomArt').src = randomImage;
     </script>
 </body>
 </html>
