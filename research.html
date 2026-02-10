@@ -272,16 +272,8 @@
             left: 0;
             width: 100%;
             height: 3px;
+            background: currentColor;
         }
-
-        .expanded-content.strand-teal h3 { color: var(--teal); }
-        .expanded-content.strand-teal h3::after { background: var(--teal); }
-
-        .expanded-content.strand-pink h3 { color: var(--pink); }
-        .expanded-content.strand-pink h3::after { background: var(--pink); }
-
-        .expanded-content.strand-green h3 { color: var(--green); }
-        .expanded-content.strand-green h3::after { background: var(--green); }
 
         .strand-description {
             font-size: 1.1rem;
@@ -306,13 +298,28 @@
             border-left: 3px solid;
         }
 
-        .strand-teal .publication-item { border-left-color: var(--teal); }
-        .strand-pink .publication-item { border-left-color: var(--pink); }
-        .strand-green .publication-item { border-left-color: var(--green); }
-
         .publication-item p {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-size: 0.95rem;
+        }
+
+        .paper-link {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #666;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .paper-link:hover {
+            color: white;
+            border-color: currentColor;
         }
 
         .close-button {
@@ -401,9 +408,6 @@
 
         <section id="research">
             <h2>Research</h2>
-            <div class="intro">
-                <p><em>Research details and publications coming soon.</em></p>
-            </div>
 
             <div class="clover-wrapper">
                 <div class="clover-container">
@@ -434,24 +438,10 @@
             <!-- Expanded Content Areas -->
             <div class="expanded-content" id="content-judgment">
                 <h3>Judgment & Opportunity</h3>
-                <p class="strand-description">Evaluation, be it organizational or interpersonal, is a reciprocal process where evaluators take information provided by the evaluated and assign relative weight and value. Yet this information is shaped and constrained by culture, language, beliefs, and normative expectations both in its production and interpretation. Formal and quotidian judgements shape how information, and the people producing it, are seen and valued in society. So far, my work has primarily focused on college admissions, where I founded and led the Student Narratives Lab1, and on parole hearings.</p>
+                <p class="strand-description">Evaluation, be it organizational or interpersonal, is a reciprocal process where evaluators take information provided by the evaluated and assign relative weight and value. Yet this information is shaped and constrained by culture, language, beliefs, and normative expectations both in its production and interpretation. Formal and quotidian judgements shape how information, and the people producing it, are seen and valued in society. So far, my work has primarily focused on college admissions, where I founded and led the Student Narratives Lab, and on parole hearings.</p>
                 
                 <div class="publications-list">
-                    <div class="publication-item">
-                        <p><strong>Essay content and style are strongly related to household income and SAT scores: Evidence from 60,000 undergraduate applications</strong> — <i>Science Advances</i>, 2021</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Policing the Boundaries of Blackness: How Black and White Americans Evaluate Racial Self-Identifications</strong> — <i>American Journal of Sociology</i>, 2025</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Application essays and the ritual production of merit in US selective admissions</strong> — <i>Poetics</i>, 2022</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Using Machine Learning to Scrutinize Parole Release Hearings</strong> — <i>Berkeley Technology Law Journal</i>, 2025</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Income and campus application disparities among European and non-European heritage Hispanic undergraduate applicants</strong>— <i>PNAS Nexus</i>, 2024</p>
-                    </div>
+                    <!-- Papers populated dynamically -->
                 </div>
 
                 <div class="close-button">
@@ -464,21 +454,7 @@
                 <p class="strand-description">Digital traces of human expression, namely our words, voices, and images, have become the raw material through which social life is increasingly experienced, analyzed, and automated. In this strand of research, I integrate social theory with computational tools and perspectives to examine how digital representations reflect, refract, and reshape identity, culture, and social difference. Most of this work so far examines how these representational processes unfold through language.</p>
                 
                 <div class="publications-list">
-                    <div class="publication-item">
-                        <p><strong>Multilingualism and mismatching: Spanish language usage in college admissions essays</strong> — <i>Poetics</i>, 2024</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Large language models, social demography, and hegemony: comparing authorship in human and synthetic text</strong> — <i>Journal of Big Data</i>, 2024</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Sociolinguistic Perspectives on Machine Learning with Text Data</strong> — <i>The Oxford Handbook of the Sociology of Machine Learning</i>, 2023</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Digital accents, homogeneity-by-design, and the evolving social science of written language</strong> — <i>Annual Review of Applied Linguistics</i>, 2025</p>
-                    </div>
-                       <div class="publication-item">
-                        <p><strong>ocial Disaster and Racial Framing Contests: How Anti-Asian Racism and its Resistance Enacted Racial Projects During COVID-19</strong> — <i>Big Data & Society</i>, 2026</p>
-                    </div>
+                    <!-- Papers populated dynamically -->
                 </div>
 
                 <div class="close-button">
@@ -491,21 +467,7 @@
                 <p class="strand-description">In my newest line of inquiry, I investigate how data-intensive technology, like generative AI, is changing knowledge production in academia and in society. This work examines how these technologies are reshaping research practices, methods, and the production of scholarly knowledge itself. I integrate empirical studies of the use of AI and computational tools with theoretical questions about inference, validity, and the relationship between human expertise and computational outputs.</p>
                 
                 <div class="publications-list">
-                    <div class="publication-item">
-                        <p><strong>Generative AI meets open-ended survey responses: Research participant use of AI and homogenization</strong> — <i>Sociological Methods & Research</i>, 2025</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Generative AI in Sociological Research: State of the Discipline</strong> — <i>Sociological Science</i>, 2026</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Algorithmic Tradeoffs, Applied NLP, and the State-of-the-Art Fallacy</strong> — <i>Under review</i>, 2026</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Linguistic affordances framework: A linguistic-sociological approach for the social study of language technology</strong> — <i>Social Science Computer Review</i>, 2025</p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>Whose Truth is the “Ground Truth”? College Admissions Essays and Bias in Word Vector Evaluation Methods</strong> — <i>International Conference on Educational Data Mining</i>, 2020</p>
-                    </div>
+                    <!-- Papers populated dynamically -->
                 </div>
 
                 <div class="close-button">
@@ -521,6 +483,106 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Paper data for each strand
+        const papers = {
+            'content-judgment': [
+                {
+                    title: "Essay content and style are strongly related to household income and SAT scores: Evidence from 60,000 undergraduate applications",
+                    journal: "Science Advances",
+                    year: "2021",
+                    link: "#"
+                },
+                {
+                    title: "Policing the Boundaries of Blackness: How Black and White Americans Evaluate Racial Self-Identifications",
+                    journal: "American Journal of Sociology",
+                    year: "2025",
+                    link: "#"
+                },
+                {
+                    title: "Income and campus application disparities among European and non-European heritage Hispanic undergraduate applicants",
+                    journal: "PNAS Nexus",
+                    year: "2024",
+                    link: "#"
+                },
+                {
+                    title: "Using Machine Learning to Scrutinize Parole Release Hearings",
+                    journal: "Berkeley Technology Law Journal",
+                    year: "2025",
+                    link: "#"
+                },
+                {
+                    title: "Application essays and the ritual production of merit in US selective admissions",
+                    journal: "Poetics",
+                    year: "2022",
+                    link: "#"
+                }
+            ],
+            'content-identity': [
+                {
+                    title: "Digital accents, homogeneity-by-design, and the evolving social science of written language",
+                    journal: "Annual Review of Applied Linguistics",
+                    year: "2025",
+                    link: "#"
+                },
+                {
+                    title: "Large language models, social demography, and hegemony: comparing authorship in human and synthetic text",
+                    journal: "Journal of Big Data",
+                    year: "2024",
+                    link: "#"
+                },
+                {
+                    title: "Multilingualism and mismatching: Spanish language usage in college admissions essays",
+                    journal: "Poetics",
+                    year: "2024",
+                    link: "#"
+                },
+                {
+                    title: "Sociolinguistic Perspectives on Machine Learning with Text Data",
+                    journal: "The Oxford Handbook of the Sociology of Machine Learning",
+                    year: "2023",
+                    link: "#"
+                },
+                {
+                    title: "Racial Framing Contests: How Anti-Asian Racism and its Resistance Enacted Racial Projects During COVID-19",
+                    journal: "Big Data & Society",
+                    year: "2026",
+                    link: "#"
+                }
+            ],
+            'content-research': [
+                {
+                    title: "Generative AI in Sociological Research: State of the Discipline",
+                    journal: "Sociological Science",
+                    year: "2026",
+                    link: "#"
+                },
+                {
+                    title: "Generative AI meets open-ended survey responses: Research participant use of AI and homogenization",
+                    journal: "Sociological Methods & Research",
+                    year: "2025",
+                    link: "#"
+                },
+                {
+                    title: "Linguistic affordances framework: A linguistic-sociological approach for the social study of language technology",
+                    journal: "Social Science Computer Review",
+                    year: "2025",
+                    link: "#"
+                },
+                {
+                    title: "Algorithmic Tradeoffs, Applied NLP, and the State-of-the-Art Fallacy",
+                    journal: "Under review",
+                    year: "",
+                    link: "#"
+                },
+                {
+                    title: "Whose Truth is the \"Ground Truth\"? College Admissions Essays and Bias in Word Vector Evaluation Methods",
+                    journal: "International Conference on Educational Data Mining",
+                    year: "2020",
+                    link: "#"
+                }
+            ]
+        };
 
         // Research strands data (without fixed colors)
         const strands = [
@@ -579,19 +641,20 @@
             title.style.color = assignedColor.css;
             title.textContent = strand.title.replace('\n', ' ');
             leaf.dataset.contentId = strand.contentId;
-            leaf.dataset.colorClass = strand.colorClass;
+            
+            // Store the actual assigned color instead of fixed colorClass
+            leaf.dataset.assignedColor = assignedColor.css;
         });
 
         function toggleStrand(leafIndex) {
             const leaf = document.getElementById(`leaf-${leafIndex}`);
             const contentId = leaf.dataset.contentId;
-            const colorClass = leaf.dataset.colorClass;
+            const assignedColor = leaf.dataset.assignedColor;
             const content = document.getElementById(contentId);
             
             // Close all content areas
             document.querySelectorAll('.expanded-content').forEach(el => {
                 el.classList.remove('active');
-                el.classList.remove('strand-teal', 'strand-pink', 'strand-green');
             });
             
             // Remove active from all leaves
@@ -599,8 +662,41 @@
                 el.classList.remove('active');
             });
             
-            // Open selected content
-            content.classList.add('active', colorClass);
+            // Shuffle and populate papers for this strand
+            const shuffledPapers = shuffle(papers[contentId]);
+            const publicationsList = content.querySelector('.publications-list');
+            publicationsList.innerHTML = ''; // Clear existing
+            
+            shuffledPapers.forEach(paper => {
+                const item = document.createElement('div');
+                item.className = 'publication-item';
+                item.style.borderLeftColor = assignedColor;
+                
+                const yearText = paper.year ? `, ${paper.year}` : '';
+                item.innerHTML = `
+                    <p><strong>${paper.title}</strong> — <i>${paper.journal}</i>${yearText}</p>
+                    <a href="${paper.link}" class="paper-link" target="_blank">Link</a>
+                `;
+                
+                // Set link button hover color
+                const link = item.querySelector('.paper-link');
+                link.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = assignedColor;
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'transparent';
+                });
+                
+                publicationsList.appendChild(item);
+            });
+            
+            // Open selected content with matching color
+            content.classList.add('active');
+            
+            // Set heading color (underline will inherit via currentColor)
+            const heading = content.querySelector('h3');
+            heading.style.color = assignedColor;
+            
             leaf.classList.add('active');
             
             // Scroll to content
