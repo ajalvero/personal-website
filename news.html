@@ -139,12 +139,14 @@
             border-left: 3px solid transparent;
         }
 
-        .news-item:nth-of-type(2) { border-left-color: var(--teal); }
-        .news-item:nth-of-type(3) { border-left-color: var(--pink); }
-        .news-item:nth-of-type(4) { border-left-color: var(--green); }
-        .news-item:nth-of-type(5) { border-left-color: var(--coral); }
-        .news-item:nth-of-type(6) { border-left-color: var(--teal); }
-        .news-item:nth-of-type(7) { border-left-color: var(--pink); }
+        .news-item:nth-of-type(1) { border-left-color: var(--teal); }
+        .news-item:nth-of-type(2) { border-left-color: var(--pink); }
+        .news-item:nth-of-type(3) { border-left-color: var(--green); }
+        .news-item:nth-of-type(4) { border-left-color: var(--coral); }
+        .news-item:nth-of-type(5) { border-left-color: var(--teal); }
+        .news-item:nth-of-type(6) { border-left-color: var(--pink); }
+        .news-item:nth-of-type(7) { border-left-color: var(--green); }
+        .news-item:nth-child(7) { border-left-color: var(--pink); }
 
         .news-item .date {
             color: #999;
@@ -159,8 +161,20 @@
             color: #333;
         }
 
-        .news-item a {
-            color: inherit;
+        /* Bio section styling */
+        .bio-section {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .bio-section h3 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-weight: 400;
         }
 
         footer {
@@ -184,11 +198,6 @@
 
             .container {
                 padding: 80px 30px;
-            }
-
-            nav {
-                gap: 20px;
-                flex-wrap: wrap;
             }
         }
     </style>
@@ -233,60 +242,7 @@
                     <p><strong>Preprint:</strong> "Does Algorithmic Uncertainty Sway Human Experts? Evidence from a Field Experiment in Selective College Admissions" posted to <i>arXiv</i> <a href="https://arxiv.org/abs/2602.00241">Link to paper</a></p>
                 </div>
             </div>
-
-            <!--
-            <div class="year-section">
-                <h3 class="year-heading">2025</h3>
-
-                <div class="news-item">
-                    <span class="date">Month 2025</span>
-                    <p><strong>Add news item:</strong> Description here</p>
-                </div>
-            </div>
-
-            <div class="year-section">
-                <h3 class="year-heading">2024</h3>
-
-                <div class="news-item">
-                    <span class="date">Month 2024</span>
-                    <p><strong>Add news item:</strong> Description here</p>
-                </div>
-
-                <div class="news-item">
-                    <span class="date">Month 2024</span>
-                    <p><strong>Add news item:</strong> Description here</p>
-                </div>
-
-                <div class="news-item">
-                    <span class="date">Month 2024</span>
-                    <p><strong>Add news item:</strong> Description here</p>
-                </div>
-
-                <div class="news-item">
-                    <span class="date">Month 2024</span>
-                    <p><strong>Add news item:</strong> Description here</p>
-                </div>
-
-                <div class="news-item">
-                    <span class="date">Month 2024</span>
-                    <p><strong>Add news item:</strong> Description here</p>
-                </div>
-            </div>
-
-            <div class="year-section">
-                <h3 class="year-heading">2023</h3>
-
-                <div class="news-item">
-                    <span class="date">Month 2023</span>
-                    <p><strong>Add news item:</strong> Description here</p>
-                </div>
-
-                <div class="news-item">
-                    <span class="date">Month 2023</span>
-                    <p><strong>Add news item:</strong> Description here</p>
-                </div>
-            </div>
-            -->
+            
         </section>
 
         <footer>
