@@ -139,12 +139,12 @@
             border-left: 3px solid transparent;
         }
 
-        .news-item:nth-child(2) { border-left-color: var(--teal); }
-        .news-item:nth-child(3) { border-left-color: var(--pink); }
-        .news-item:nth-child(4) { border-left-color: var(--green); }
-        .news-item:nth-child(5) { border-left-color: var(--coral); }
-        .news-item:nth-child(6) { border-left-color: var(--teal); }
-        .news-item:nth-child(7) { border-left-color: var(--pink); }
+        .news-item:nth-of-type(2) { border-left-color: var(--teal); }
+        .news-item:nth-of-type(3) { border-left-color: var(--pink); }
+        .news-item:nth-of-type(4) { border-left-color: var(--green); }
+        .news-item:nth-of-type(5) { border-left-color: var(--coral); }
+        .news-item:nth-of-type(6) { border-left-color: var(--teal); }
+        .news-item:nth-of-type(7) { border-left-color: var(--pink); }
 
         .news-item .date {
             color: #999;
@@ -157,6 +157,10 @@
             font-size: 1.05rem;
             margin-bottom: 10px;
             color: #333;
+        }
+
+        .news-item a {
+            color: inherit;
         }
 
         footer {
@@ -181,6 +185,11 @@
             .container {
                 padding: 80px 30px;
             }
+
+            nav {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
@@ -201,34 +210,34 @@
         <section>
             <h2>News & Activities</h2>
 
- <div class="year-section">
+            <div class="year-section">
                 <h3 class="year-heading">2026</h3>
-                     <div class="news-item">
+
+                <div class="news-item">
                     <span class="date">March 2026</span>
-                    <p><strong>Talk: </strong> "Admissions Essays After ChatGPT: The New Economy of Style" with the NYU Center for Practice and Research at the Intersection of Information, Society, and Methodology (PRIISM) <a href="https://steinhardt.nyu.edu/events/2026-03/admissions-essays-after-chatgpt-new-economy-style">Link to more details about the talk</a> </p>
-                    <p><strong>Symposium co-organizer: </strong> "Assessing and Imagining the Impact of Generative AI on Science Symposium" <a href="https://ai.cornell.edu/genai-in-research-symposium/">Schedule</a> and <a href="https://news.cornell.edu/stories/2026/03/experts-examine-use-generative-ai-science">Cornell Chronicle article</a> describing the events </p>
-                    </div>
-            </div>
+                    <p><strong>Talk:</strong> "Admissions Essays After ChatGPT: The New Economy of Style" with the NYU Center for Practice and Research at the Intersection of Information, Society, and Methodology (PRIISM) <a href="https://steinhardt.nyu.edu/events/2026-03/admissions-essays-after-chatgpt-new-economy-style">Link to more details about the talk</a></p>
+                    <p><strong>Symposium co-organizer:</strong> "Assessing and Imagining the Impact of Generative AI on Science Symposium" <a href="https://ai.cornell.edu/genai-in-research-symposium/">Schedule</a> and <a href="https://news.cornell.edu/stories/2026/03/experts-examine-use-generative-ai-science">Cornell Chronicle article</a> describing the events</p>
+                </div>
 
                 <div class="news-item">
                     <span class="date">February 2026</span>
-                    <p><strong>Publication: </strong>"Racial framing contests: How anti-Asian racism and its resistance enacted racial projects during COVID-19" published in <i>Big Data & Society</i> <a href="https://journals.sagepub.com/doi/10.1177/20539517261424160">Link to paper</a></p>
-                    <p><strong>Preprint: </strong>"The Digital Divide in Generative AI: Evidence from Large Language Model Use in College Admissions Essays" posted to <i>arXiv</i> <a href="https://arxiv.org/abs/2602.17791">Link to paper</a></p>
-                    <p><strong>Panelist: </strong> Hosted by Belongg and Sinceriti called "The Admissions Illusion: When Every Essay Is Perfect."</a></p>
-                    <p><strong>Panelist: </strong> Hosted by the Coalition for College called "AI in Admissions"</a></p>
-                    </div>
-            </div>
-     
+                    <p><strong>Publication:</strong> "Racial framing contests: How anti-Asian racism and its resistance enacted racial projects during COVID-19" published in <i>Big Data & Society</i> <a href="https://journals.sagepub.com/doi/10.1177/20539517261424160">Link to paper</a></p>
+                    <p><strong>Preprint:</strong> "The Digital Divide in Generative AI: Evidence from Large Language Model Use in College Admissions Essays" posted to <i>arXiv</i> <a href="https://arxiv.org/abs/2602.17791">Link to paper</a></p>
+                    <p><strong>Panelist:</strong> Hosted by Belongg and Sinceriti called "The Admissions Illusion: When Every Essay Is Perfect."</p>
+                    <p><strong>Panelist:</strong> Hosted by the Coalition for College called "AI in Admissions"</p>
+                </div>
+
                 <div class="news-item">
                     <span class="date">January 2026</span>
-                    <p><strong>Publication: </strong> "Generative AI in Sociological Research: State of the Discipline" published in <i>Sociological Science</i> <a href="https://sociologicalscience.com/articles-v13-3-45/">Link to paper</a></p>
-                <p><strong>Preprint: </strong> "Does Algorithmic Uncertainty Sway Human Experts? Evidence from a Field Experiment in Selective College Admissions" posted to <i>arXiv</i> <a href="https://arxiv.org/abs/2602.00241">Link to paper</a> </p>
-                    </div>
+                    <p><strong>Publication:</strong> "Generative AI in Sociological Research: State of the Discipline" published in <i>Sociological Science</i> <a href="https://sociologicalscience.com/articles-v13-3-45/">Link to paper</a></p>
+                    <p><strong>Preprint:</strong> "Does Algorithmic Uncertainty Sway Human Experts? Evidence from a Field Experiment in Selective College Admissions" posted to <i>arXiv</i> <a href="https://arxiv.org/abs/2602.00241">Link to paper</a></p>
+                </div>
             </div>
-            
-            <!-- <div class="year-section">
-                <h3 class="year-heading">2025</h3> -->
-                <!-- 
+
+            <!--
+            <div class="year-section">
+                <h3 class="year-heading">2025</h3>
+
                 <div class="news-item">
                     <span class="date">Month 2025</span>
                     <p><strong>Add news item:</strong> Description here</p>
@@ -237,7 +246,7 @@
 
             <div class="year-section">
                 <h3 class="year-heading">2024</h3>
-                
+
                 <div class="news-item">
                     <span class="date">Month 2024</span>
                     <p><strong>Add news item:</strong> Description here</p>
@@ -266,7 +275,7 @@
 
             <div class="year-section">
                 <h3 class="year-heading">2023</h3>
-                
+
                 <div class="news-item">
                     <span class="date">Month 2023</span>
                     <p><strong>Add news item:</strong> Description here</p>
@@ -277,7 +286,8 @@
                     <p><strong>Add news item:</strong> Description here</p>
                 </div>
             </div>
-        </section> -->
+            -->
+        </section>
 
         <footer>
             <p>© <span id="year"></span> AJ Alvero</p>
