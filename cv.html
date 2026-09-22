@@ -6,6 +6,7 @@
     <title>CV - AJ Alvero</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -87,11 +88,17 @@
             transition: width 0.3s;
         }
 
-        nav a:nth-child(1)::after { background: var(--teal); }
-        nav a:nth-child(2)::after { background: var(--pink); }
-        nav a:nth-child(3)::after { background: var(--green); }
-        nav a:nth-child(4)::after { background: var(--coral); }
-        nav a:nth-child(5)::after { background: var(--teal); }
+        nav a:nth-child(1)::after {
+            background: var(--teal);
+        }
+
+        nav a:nth-child(2)::after {
+            background: var(--green);
+        }
+
+        nav a:nth-child(3)::after {
+            background: var(--coral);
+        }
 
         nav a:hover::after,
         nav a.active::after {
@@ -174,35 +181,49 @@
             .container {
                 padding: 80px 30px;
             }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
+
         <header>
             <h1>AJ Alvero</h1>
             <p class="subtitle">Cornell University</p>
+
             <nav>
                 <a href="index.html">About</a>
-                <a href="research.html">Research</a>
                 <a href="cv.html" class="active">CV</a>
                 <a href="news.html">News</a>
-                <a href="contact.html">Contact</a>
             </nav>
         </header>
 
         <section id="cv">
             <h2>Curriculum Vitae</h2>
-            <p>You can view or download my full CV below.</p>
-            
+
+            <p>
+                You can view or download my full CV below.
+            </p>
+
             <div class="cv-download">
-                <a href="files/alvero_cv.pdf" target="_blank">Download CV (PDF)</a>
+                <a href="files/alvero_cv.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Download CV (PDF)
+                </a>
             </div>
         </section>
 
         <footer>
             <p>© <span id="year"></span> AJ Alvero</p>
         </footer>
+
     </div>
 
     <script>
